@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:innervoice/constants/app_colors.dart';
 import 'package:innervoice/views/basic_assessment/basic_assessment.dart';
+import 'package:innervoice/views/home_screen.dart';
 import 'package:innervoice/widgets/common_submit_button.dart';
 
 class FourteenPage extends StatefulWidget {
@@ -54,7 +55,10 @@ class _FourteenPageState extends State<FourteenPage> {
                 height: 24,
                 width: 24,
               ),*/
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => HomeScreen()));
+          },
         )
       ]),
     );

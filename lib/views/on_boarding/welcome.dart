@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:innervoice/constants/app_colors.dart';
 import 'package:innervoice/constants/app_images.dart';
 import 'package:innervoice/views/login_screen.dart';
-import 'package:innervoice/views/on_borading/on_boarding_1.dart';
+import 'package:innervoice/views/on_boarding/on_boarding_1.dart';
 import 'package:innervoice/widgets/common_submit_button.dart';
 
 class WelcomeScreen extends StatefulWidget {

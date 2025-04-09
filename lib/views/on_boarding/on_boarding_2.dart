@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:innervoice/constants/app_images.dart';
+import 'package:innervoice/views/on_boarding/on_boarding_3.dart';
 
-class OnBoarding1 extends StatefulWidget {
-  const OnBoarding1({super.key});
+class OnBoarding2 extends StatefulWidget {
+  const OnBoarding2({super.key});
 
   @override
-  State<OnBoarding1> createState() => _OnBoarding1State();
+  State<OnBoarding2> createState() => _OnBoarding2State();
 }
 
-class _OnBoarding1State extends State<OnBoarding1> {
+class _OnBoarding2State extends State<OnBoarding2> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,7 +21,7 @@ class _OnBoarding1State extends State<OnBoarding1> {
           width: size.width,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(AppImages.onBoarding1), fit: BoxFit.cover)),
+                  image: AssetImage(AppImages.onBoarding2), fit: BoxFit.cover)),
           alignment: Alignment.bottomCenter),
       Positioned(
           height: size.height / 2.5,
@@ -38,43 +39,33 @@ class _OnBoarding1State extends State<OnBoarding1> {
                         padding:
                             EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                         decoration: BoxDecoration(
-                            color: Colors.green[100],
+                            color: Color(0xffFFD2C2),
                             borderRadius: BorderRadius.circular(20)),
-                        child: Text("STEP 1",
+                        child: Text("STEP 2",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Colors.green[900]))),
+                                color: Color(0xffFE814B)))),
                     SizedBox(height: 10),
-                    Text("Personalize Your Mental\nHealth State With AI",
+                    Text("Intelligent Mood Tracking \n & Emotion Insights",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.black87)),
                     SizedBox(height: 20),
-                    CircleAvatar(
-                        radius: 40,
-                        backgroundColor: Colors.black,
-                        child: SvgPicture.asset(AppImages.rightArrow)),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => OnBoarding3()));
+                      },
+                      child: CircleAvatar(
+                          radius: 40,
+                          backgroundColor: Colors.black,
+                          child: SvgPicture.asset(AppImages.rightArrow)),
+                    ),
                   ]),
             ),
           ))
     ]));
   }
-}
-
-class CustomClipperCurve extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-    path.lineTo(0, size.height * 0.3);
-    path.quadraticBezierTo(
-        size.width / 2, size.height / 2, size.width, size.height * 0.3);
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

@@ -69,6 +69,7 @@ flutter:
     - assets/icons/
     - assets/moods/
     - assets/on_boarding/
+    - assets/meditation/
     # - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

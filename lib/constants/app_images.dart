@@ -1,6 +1,9 @@
 class AppImages {
+  // app logo
   static const String appLogo = "assets/app_logo/appLogo.svg";
   static const String appLogo1 = "assets/app_logo/logo.png";
+
+  //self assessment
   static const String brain = "assets/brain.png";
   static const String email = "assets/icons/email.svg";
   static const String lock = "assets/icons/lock.svg";
@@ -28,6 +31,14 @@ class AppImages {
   static const String confusedPerson = "assets/confused_person.svg";
   static const String welcome = "assets/on_boarding/welcome.svg";
 
-  // static const String onBoarding1 = "assets/on_boarding/on_Boarding_1.svg";
+  //onBoarding
   static const String onBoarding1 = "assets/on_boarding/onboarding1.png";
+  static const String onBoarding2 = "assets/on_boarding/onboarding2.png";
+  static const String onBoarding3 = "assets/on_boarding/onboarding3.png";
+  static const String onBoarding4 = "assets/on_boarding/onboarding4.png";
+
+  // meditation
+  static const String med1 = "assets/meditation/med1.png";
+  static const String med2 = "assets/meditation/med2.png";
+  static const String med3 = "assets/meditation/med3.png";
 }

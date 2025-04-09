@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:innervoice/constants/app_images.dart';
 import 'package:innervoice/views/home_screen.dart';
-import 'package:innervoice/views/on_borading/welcome.dart';
+import 'package:innervoice/views/on_boarding/welcome.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {

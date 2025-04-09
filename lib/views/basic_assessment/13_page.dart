@@ -16,8 +16,8 @@ class _ThirteenPageState extends State<ThirteenPage> {
 
   final List emojis = [
     AppImages.excellentFace,
-    AppImages.fairFace,
     AppImages.goodFace,
+    AppImages.fairFace,
     AppImages.poorFace,
     AppImages.worstFace,
   ];

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innervoice/constants/app_colors.dart';
-import 'package:intl/intl.dart';
+import 'package:innervoice/views/meditation/meditation_1.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,26 +10,64 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  DateTime date = DateTime(DateTime.december);
   late Size size;
 
   @override
   void initState() {
-    DateTime thisDate = new DateTime.now();
-    date = new DateTime(thisDate.year, thisDate.month, thisDate.day);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    String todayDate = DateFormat('EEE, dd MMM yyyy').format(DateTime.now());
     size = MediaQuery.of(context).size;
-    // String todayDate = DateFormat.EEE;
     return Scaffold(
       drawer: Drawer(
-        width: 200,
-        backgroundColor: Colors.red,
-        elevation: 5,
+        width: size.width * 0.65,
+        backgroundColor: AppColors.mainColor,
+        elevation: 8,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: AppColors.mainColor.withOpacity(0.9),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.white,
+                    child: Icon(Icons.person,
+                        size: 30, color: AppColors.mainColor),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "Welcome!",
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Divider(color: Colors.white54),
+            ),
+            ListTile(
+              leading: Icon(Icons.self_improvement, color: Colors.white),
+              title: Text(
+                "Meditation",
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => Meditation1()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
       appBar: AppBar(
         centerTitle: true,
@@ -88,6 +126,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(children: [
                         Row(children: [
                           Icon(Icons.heart_broken, color: Colors.white),
+                          Text("Heart Rate",
+                              style: TextStyle(color: Colors.white))
+                        ])
+                      ])),
+                      healthMetrics(
+                          child: Column(children: [
+                        Row(children: [
+                          Icon(Icons.heart_broken, color: Colors.white),
                           Text("Freud Score",
                               style: TextStyle(color: Colors.white))
                         ])
@@ -110,107 +156,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   )),
               Text("Snail dots"),
-              Card(
-                color: AppColors.mainColor,
-                child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            "Heart Rate",
-                            style: TextStyle(color: Colors.white, fontSize: 16),
-                          ),
-                          RichText(
-                            text: TextSpan(children: [
-                              TextSpan(
-                                  text: '96',
-                                  style: TextStyle(
-                                      fontSize: 48, // Adjust as needed
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white)),
-                              WidgetSpan(
-                                child: SizedBox(
-                                    width:
-                                        8), // Space between numbers and "bpm"
-                              ),
-                              TextSpan(
-                                text: 'bpm',
-                                style: TextStyle(
-                                  fontSize: 16, // Adjust as needed
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ]),
-                          )
-                        ],
-                      ),
-                      Icon(
-                        Icons.monitor_heart_outlined,
-                        size: 100,
-                        color: Colors.white,
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Mindful Trackers",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  Icon(Icons.more_vert, color: Colors.grey)
-                ],
-              ),
-              /* Card(
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Color(0xffF2F5EB),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Icon(
-                          Icons.watch_later_outlined,
-                          size: 50,
-                        ),
-                      ),
-                      Column(
-                        children: [Text()],
-                      ),
-                      Icon(Icons.waves)
-                    ],
-                  ),
-                ),
-              )*/
-              ListTile(
-                tileColor: Colors.white,
-                minTileHeight: size.height / 8,
-                leading: Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Color(0xffF2F5EB),
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Icon(Icons.watch_later_outlined, size: 50),
-                ),
-                title: Text(
-                  "Mindful Hours",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text(
-                  "2.5h/8h",
-                  style: TextStyle(fontWeight: FontWeight.w500),
-                ),
-                trailing: Icon(Icons.waves),
-              )
             ],
           ),
         ),
