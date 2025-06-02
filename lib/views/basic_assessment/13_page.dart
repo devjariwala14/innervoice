@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:innervoice/constants/app_images.dart';
@@ -55,7 +57,7 @@ class _ThirteenPageState extends State<ThirteenPage> {
               onTap: () {
                 setState(() {
                   selectedIndex = index;
-                  print(selectedIndex);
+                  log(selectedIndex.toString());
                 });
               },
               child: Container(

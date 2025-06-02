@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:innervoice/constants/app_images.dart';
@@ -47,7 +49,7 @@ class _EightPageState extends State<EightPage> {
         questionNo: 8,
         question: "How would you rate your seep quality?",
         onPressed: () {
-          print(labels[_value.toInt()]);
+          log(labels[_value.toInt()]);
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => NinePage()));
         },

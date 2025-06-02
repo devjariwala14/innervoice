@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:innervoice/constants/app_colors.dart';
@@ -25,7 +27,7 @@ class _TenPageState extends State<TenPage> {
           _chips.add(value);
           _controller.clear();
         } else {
-          print("limit reached");
+          log("limit reached");
         }
       });
       _focusNode.requestFocus();
@@ -38,7 +40,7 @@ class _TenPageState extends State<TenPage> {
         question: "How would you describe yourself?",
         questionNo: 10,
         onPressed: () {
-          print(_chips.toString());
+          log(_chips.toString());
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => ElevenPage()));
         },

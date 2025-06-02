@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:innervoice/constants/app_colors.dart';
 import 'package:innervoice/views/basic_assessment/8_page.dart';
@@ -19,7 +21,7 @@ class _SevenPageState extends State<SevenPage> {
         question: "Are you experiencing any physical distress?",
         questionNo: 7,
         onPressed: () {
-          print(selectedOption);
+          log(selectedOption);
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => EightPage()));
           // EightPage

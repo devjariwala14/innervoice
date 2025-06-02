@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:innervoice/constants/app_colors.dart';
 import 'package:innervoice/views/basic_assessment/4_page.dart';
@@ -21,7 +23,7 @@ class _ThirdPageState extends State<ThirdPage> {
         questionNo: 3,
         isSubmit: true,
         onPressed: () {
-          print(selectedAge);
+          log(selectedAge.toString());
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => FourthPage()));
         },

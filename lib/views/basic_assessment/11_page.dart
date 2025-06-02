@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:innervoice/constants/app_colors.dart';
@@ -25,7 +27,7 @@ class _ElevenPageState extends State<ElevenPage> {
           _chips.add(value);
           _controller.clear();
         } else {
-          print("limit reached");
+          log("limit reached");
         }
       });
       _focusNode.requestFocus();

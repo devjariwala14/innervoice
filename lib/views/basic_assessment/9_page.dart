@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:innervoice/constants/app_colors.dart';
@@ -25,9 +27,7 @@ class _NinePageState extends State<NinePage> {
         question: "Are you taking any medications?",
         questionNo: 9,
         onPressed: () {
-          (meds != "")
-              ? print("Selected option: $meds")
-              : print("not selected");
+          (meds != "") ? log("Selected option: $meds") : log("not selected");
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => TenPage()));
         },

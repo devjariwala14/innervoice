@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:innervoice/constants/app_colors.dart';
@@ -6,7 +8,7 @@ import 'package:innervoice/views/basic_assessment/3_page.dart';
 import 'package:innervoice/views/basic_assessment/basic_assessment.dart';
 
 class SecondPage extends StatefulWidget {
-  SecondPage({super.key});
+  const SecondPage({super.key});
 
   @override
   State<SecondPage> createState() => _SecondPageState();
@@ -22,7 +24,7 @@ class _SecondPageState extends State<SecondPage> {
         question: "What's your Gender?",
         questionNo: 2,
         onPressed: () {
-          print(gender);
+          log(gender);
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => ThirdPage()));
         },

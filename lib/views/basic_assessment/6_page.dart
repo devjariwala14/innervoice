@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:innervoice/constants/app_colors.dart';
@@ -31,7 +33,7 @@ class _SixthPageState extends State<SixthPage> {
         question: "Have you sought professional help before?",
         questionNo: 6,
         onPressed: () {
-          print(isSelected);
+          log(isSelected);
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => SevenPage()));
         });

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:innervoice/constants/app_colors.dart';
 import 'package:innervoice/views/basic_assessment/13_page.dart';
@@ -26,7 +28,7 @@ class _TwelvePageState extends State<TwelvePage> {
         question: "How would you rate your stress level?",
         questionNo: 12,
         onPressed: () {
-          print("$stressLevel");
+          log("$stressLevel");
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => ThirteenPage()));
         },

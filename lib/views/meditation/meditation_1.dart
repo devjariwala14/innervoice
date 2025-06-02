@@ -116,7 +116,7 @@ class _Meditation1State extends State<Meditation1> {
                   subTitle: "Discover the art of stillness",
                   step: "step 2",
                   totalDuration: "14 min",
-                  noOfTracks: 4,
+                  noOfTracks: 5,
                   duration: "2 min",
                   image: AppImages.med3)
             ],
